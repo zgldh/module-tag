@@ -1,0 +1,43 @@
+{
+  "name": "zgldh/module-tag",
+  "description": "Tag Module for zgldh/scaffold",
+  "keywords": [
+    "laravel",
+    "scaffold",
+    "tag"
+  ],
+  "license": "MIT",
+  "require": {
+    "zgldh/scaffold": ">0.2",
+    "estgroupe/laravel-taggable": "^5.2",
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "zgldh\\Tag\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+    ]
+  },
+  "scripts": {
+    "post-root-package-install": [
+    ],
+    "post-create-project-cmd": [
+    ],
+    "post-install-cmd": [
+    ],
+    "post-update-cmd": [
+    ]
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/zgldh/laravel-taggable"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "namespace": "WoXuanWang\\Tag",
+  "name": "标签",
+  "middleware": "auth",
+  "table": "tags",
+  "fields": [
+    {
+      "name": "id",
+      "htmlLabel": "ID",
+      "dbType": "increments",
+      "htmlType": "",
+      "validations": "",
+      "searchable": false,
+      "fillable": false,
+      "primary": true,
+      "inForm": false,
+      "inIndex": false
+    },
+    {
+      "name": "slug",
+      "htmlLabel": "标识",
+      "dbType": "string",
+      "defaultValue": "",
+      "htmlType": "text",
+      "searchable": true
+    },
+    {
+      "name": "name",
+      "htmlLabel": "名字",
+      "dbType": "string",
+      "defaultValue": "",
+      "htmlType": "text",
+      "validations": "",
+      "searchable": true
+    },
+    {
+      "name": "description",
+      "htmlLabel": "描述",
+      "dbType": "text:nullable",
+      "htmlType": "text",
+      "validations": "",
+      "searchable": true
+    },
+    {
+      "name": "suggest",
+      "htmlLabel": "推荐",
+      "dbType": "tinyInteger",
+      "defaultValue": 0,
+      "htmlType": "radio-inline,否:0,是:1",
+      "validations": "",
+      "searchable": false
+    },
+    {
+      "name": "count",
+      "htmlLabel": "总计",
+      "dbType": "int:unsigned",
+      "defaultValue": 0,
+      "htmlType": "number",
+      "validations": "",
+      "searchable": false
+    },
+    {
+      "name": "parent_id",
+      "htmlLabel": "父级标签",
+      "dbType": "int:nullable",
+      "htmlType": "select",
+      "relation": "mt1,Tag,parent_id,id",
+      "validations": "",
+      "searchable": false,
+      "inIndex": true
+    },
+    {
+      "name": "lft",
+      "htmlLabel": "左标签",
+      "dbType": "int:nullable",
+      "htmlType": "select",
+      "relation": "mt1,Tag,parent_id,id",
+      "validations": "",
+      "searchable": false,
+      "inIndex": false
+    },
+    {
+      "name": "rgt",
+      "htmlLabel": "右标签",
+      "dbType": "int:nullable",
+      "htmlType": "select",
+      "relation": "mt1,Tag,parent_id,id",
+      "validations": "",
+      "searchable": false,
+      "inIndex": false
+    },
+    {
+      "name": "depth",
+      "htmlLabel": "深度",
+      "dbType": "int",
+      "htmlType": "number",
+      "validations": "",
+      "searchable": false,
+      "inIndex": false
+    },
+    {
+      "name": "created_at",
+      "dbType": "timestamp",
+      "htmlType": "",
+      "validations": "",
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false
+    },
+    {
+      "name": "updated_at",
+      "dbType": "timestamp",
+      "htmlType": "",
+      "validations": "",
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false
+    }
+  ]
+}
