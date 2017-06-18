@@ -8,8 +8,8 @@
   ],
   "license": "MIT",
   "require": {
-    "zgldh/scaffold": ">0.2",
-    "zgldh/laravel-taggable": "^5.3",
+    "zgldh/scaffold": "~0.2",
+    "zgldh/laravel-taggable": "~5.3.0"
   },
   "require-dev": {
   },
@@ -17,7 +17,7 @@
     "classmap": [
     ],
     "psr-4": {
-      "zgldh\\Tag\\": "src/"
+      "zgldh\\ModuleTag\\": "src/"
     }
   },
   "autoload-dev": {

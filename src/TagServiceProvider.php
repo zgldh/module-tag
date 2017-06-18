@@ -1,4 +1,4 @@
-<?php namespace zgldh\Scaffold;
+<?php namespace zgldh\ModuleTag;
 
 use Illuminate\Support\ServiceProvider;
 
