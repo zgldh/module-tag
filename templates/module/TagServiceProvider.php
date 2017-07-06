@@ -15,6 +15,7 @@ class TagServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        parent::register();
     }
 
     /**
