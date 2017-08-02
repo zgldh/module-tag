@@ -14,7 +14,7 @@ class TagController extends AppBaseController
     public function __construct(TagRepository $tagRepository)
     {
         $this->repository = $tagRepository;
-        $this->middleware("auth:admin", [
+        $this->middleware("auth", [
             'except' => ['mostUsed', 'index']
         ]);
     }
@@ -43,6 +43,7 @@ class TagController extends AppBaseController
         $input = $request->all();
 
         $tag = $this->repository->create($input);
+        $tag->load($request->getWith());
 
         return $this->sendResponse($tag, 'Tag saved successfully.');
     }
@@ -56,8 +57,8 @@ class TagController extends AppBaseController
      */
     public function show($id, ShowRequest $request)
     {
-        $this->repository->with($request->getWith());
         $tag = $this->repository->findWithoutFail($id);
+        $tag->load($request->getWith());
 
         if (empty($tag)) {
             return $this->sendError('Tag not found');
@@ -83,6 +84,7 @@ class TagController extends AppBaseController
         }
 
         $tag = $this->repository->update($request->all(), $id);
+        $tag->load($request->getWith());
 
         return $this->sendResponse($tag, 'Tag updated successfully.');
     }
