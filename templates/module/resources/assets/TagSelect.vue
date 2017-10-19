@@ -9,7 +9,7 @@
                 :on-search="onSearchTags">
     </vue-select>
     <div class="most-used-tags" v-if="showMostUsed">
-      <span v-for="tag in mostUsedTags" v-on:click="onSelectTag(tag)">{{tag.name}}</span>
+      <span v-for="tag in mostUsedTags" :key="tag.id" v-on:click="onSelectTag(tag)">{{tag.name}}</span>
     </div>
   </div>
 </template>
